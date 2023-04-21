@@ -23,6 +23,40 @@
     text-align: center;
 }
 
+#btn1 {
+  background-color: lightblue;
+  border-radius: 20px;
+  border-style: dashed;
+  color: white;
+  padding: 15px 32px;
+  font-size: 16px;
+  position: absolute;
+  left: 600px;
+}
+
+#btn2 {
+  background-color: lightblue;
+  border-radius: 20px;
+  border-style: dashed;
+  color: white;
+  padding: 15px 32px;
+  font-size: 16px;
+  position: absolute;
+  right: 600px;
+}
+
+#lol {
+background-color: lightblue;
+  border-radius: 2px;
+  border-style: solid;
+  color: white;
+  padding: 15px 32px;
+  font-size: 16px;
+  position: absolute;
+  left: 870px;
+  bottom: 500px;;
+}
+
     </style>
  
 <head>
@@ -34,8 +68,14 @@
         <p>vasta tähään alas:</p>
         <input type="text" id="animal" placeholder="esim. kissa/koira">
         </div>
-
+        <button id="lol" onclick="wrongBtn()">kato mitä mulle käy kun painat nappei</button>
+        <button id="btn2" onclick="decreaseBtnSize()">kutista napin koko!</button>
+        <button id="btn1" onclick="doubleBtnSize()">tuplaa napin koko!</button>
+       
+     
         <script>
+
+                
 var animalInput = document.getElementById("animal");
 animalInput.addEventListener("input", function() {
   var animal = animalInput.value.toLowerCase();
@@ -48,8 +88,26 @@ animalInput.addEventListener("input", function() {
   }
 });
 
-document.getElementById("animal").addEventListener("keyup", function(event) {
-});
+function doubleBtnSize() {
+	var button = document.getElementsByTagName("button")[0];
+	var currentWidth = button.offsetWidth;
+	var currentHeight = button.offsetHeight;
+	button.style.width = (currentWidth * 2) + "px";
+	button.style.height = (currentHeight * 2) + "px";
+	}
+
+function decreaseBtnSize() {
+	var button = document.getElementsByTagName("button")[0];
+	var currentWidth = button.offsetWidth;
+	var currentHeight = button.offsetHeight;
+	button.style.width = (currentWidth / 2) + "px";
+	button.style.height = (currentHeight / 2) + "px";
+	}
+
+function wrongBtn () {
+        alert("vaara nappi pelle")
+}
+
         </script>
 
         <script src="/js/script.js"></script>
