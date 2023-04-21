@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+            
+    body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+}
+
+#koko {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+    </style>
+ 
+<head>
+        <title>lol</title>
+        </head>
+        <body>
+        <div id="koko">
+        <h1>mikä sun lempi eläin on😺🐶</h1>
+        <p>vasta tähään alas:</p>
+        <input type="text" id="animal" placeholder="esim. kissa/koira">
+        </div>
+
+        <script>
+var animalInput = document.getElementById("animal");
+animalInput.addEventListener("input", function() {
+  var animal = animalInput.value.toLowerCase();
+  if (animal === "kissa") {
+    document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1608848461950-0fe51dfc41cb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NHx8fGVufDB8fHx8&w=1000&q=80')";
+  } else if (animal === "koira") {
+    document.body.style.backgroundImage = "url('https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg')";
+  } else {
+    document.body.style.backgroundImage = "";
+  }
+});
+
+document.getElementById("animal").addEventListener("keyup", function(event) {
+});
+        </script>
+
+        <script src="/js/script.js"></script>
+        </body>
+        </html>
