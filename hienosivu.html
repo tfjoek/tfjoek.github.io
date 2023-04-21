@@ -73,8 +73,8 @@ background-color: lightblue;
         <input type="text" id="animal" placeholder="esim. kissa/koira">
         </div>
         <button id="lol" onclick="wrongBtn()">kato mitä mulle käy kun painat nappei</button>
-        <button id="btn2" onclick="decreaseBtnSize()">kutista napin koko!</button>
-        <button id="btn1" onclick="doubleBtnSize()">tuplaa napin koko!</button>
+        <button id="btn2">kutista napin koko!</button>
+        <button id="btn1">tuplaa napin koko!</button>
        
      
         <script>
@@ -109,9 +109,11 @@ function decreaseBtnSize() {
 	}
 
 function wrongBtn () {
-        alert("vaara nappi pelle")
+        alert("moro älä paina mua")
 }
 
+document.getElementById("btn1").addEventListener("click", doubleBtnSize);
+document.getElementById("btn2").addEventListener("click", decreaseBtnSize);
         </script>
 
         <script src="/js/script.js"></script>
