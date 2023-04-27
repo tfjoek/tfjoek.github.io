@@ -7,21 +7,23 @@
   </head>
   <body>
 
-    <input type="text" class="form-control js-name">
+    
 
-    <h2>
-      Hello
-      <span class="js-change-name">
-    </h2>
 
-<script>
-      var input = document.querySelector(".js-name")
-var nameElem = document.querySelector(".js-change-name")
-function callback(event) {
-    nameElem.innerText = event.target.value
+   <script>
+
+
+var randomNumb = Math.floor(Math.random() * 10) + 1;
+var guess = prompt("arvaa numero 1-10");
+while (guess != randomNumb) {
+    guess = prompt("väärä"); 
 }
-input.addEventListener('keyup', callback)
-      </script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+alert("hyvin arvattu");
+   
+   
+   </script>
   </body>
 </html>
+
+
+
