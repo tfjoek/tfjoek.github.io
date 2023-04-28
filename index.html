@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+     <h1 id="halal" style="color:lightseagreen;">hello there</h1>
+     <button onclick="choosePer()" style="height:100px;width:100px">valitse ukko</button>
+
+     <style>
+       
+     </style>
+     <script>
+   
+   class Person {
+        constructor(name, age, netWorth, image) {
+          this.name = name
+          this.age = Number(age)
+          this.netWorth = netWorth
+          this.image = image
+        }
+      }
+  
+    const billGates = new Person("Bill Gates", 66, "115 billion dollar", "https://media.wired.co.uk/photos/606d9fac6ab54fce4fbb1f03/16:9/w_2560%2Cc_limit/0321ftgates__03_crop.jpg")
+    const elonMusk = new Person("Elon Musk", 50, "300 billion dollar tai enemmä emt", "https://ichef.bbci.co.uk/news/976/cpsprodpb/7727/production/_103330503_musk3.jpg")
+     
+     function choosePer() {
+       let person = prompt("bill gates vai elon musk").toUpperCase()
+       if (person === "BILL GATES") {
+         document.getElementById('halal').innerHTML = billGates.name + ' jäbäl on ' + billGates.netWorth
+         document.body.style.backgroundImage = "url('" + billGates.image + "')"
+       } else if (person === "ELON MUSK") {
+         document.getElementById('halal').innerHTML = elonMusk.name + ' jäbäl on ' + elonMusk.netWorth
+         document.body.style.backgroundImage = "url('" + elonMusk.image + "')"
+       } else {
+         alert("not valid choice :/")
+       }
+     }
+     </script>
+  </body>
+</html>
