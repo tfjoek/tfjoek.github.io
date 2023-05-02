@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link href='https://fonts.googleapis.com/css?family=Allerta Stencil' rel='stylesheet'>
+      <style>
+
+.js-close-modal {
+  appearance: button;
+  backface-visibility: hidden;
+  background-color: #405cf5;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 100%;
+  height: 44px;
+  line-height: 1.15;
+  margin: 12px 0 0;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+body {
+    font-family: 'Allerta Stencil';font-size: 22px;
+}
+  .modal {
+  position: fixed; 
+  left: 50%;
+  top: 40%;
+  width: 60%; 
+  padding: 20px;
+  border: 10px solid #405cf5;
+  background-color:#6199f2;
+  transform: translate(-50%, -50%);
+  display: none;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  .js-close-modal {
+    text-align: center;
+  }
+
+  .js-open-modal {
+    width: 200px;
+    height: 200px;
+  }
+
+
+  </style>
+  </head>
+
+
+  <body>
+
+  <div class="modal js-modal">
+    <h1 class="js-modal-title">sigma enigma</h1>
+    <p class="js-modal-text">英雄联盟 400 CS 24 MIN英雄联盟 400 CS 24 MIN英雄联盟 400 CS 24 MIN英雄联盟 400 CS 24 MIN英雄联盟 400 CS 24 MIN英雄联盟 400 CS 24 MIN英雄联盟 400 CS 24 MIN英雄联盟 400 CS 24 MIN英雄联盟 400 CS 24 MIN</p>
+    <p>
+      <button class="js-close-modal">Close Modal</button>
+    </p>
+  </div>
+
+  <button class="js-open-modal">OPEN MODAL</button>
+    
+    
+
+
+
+   <script>
+
+    class Modal {
+      constructor(title, text) {
+        this.modal = document.querySelector(".js-modal")
+        if(title !== undefined) {
+        this.modal.querySelector(".js-modal-title").innerText = title
+        }
+        if(text !== undefined) {
+        this.modal.querySelector(".js-modal-text").innerText = text
+        }
+      }
+
+      open() {
+        this.modal.style.display = 'initial'
+      }
+
+      close() {
+        this.modal.style.display = 'none'
+      }
+    }
+
+    const openBtn = document.querySelector(".js-open-modal")
+    const closeBtn = document.querySelector(".js-close-modal")
+    const modal = new Modal("awesome title", "hello yippikaijee")
+
+    openBtn.addEventListener('click', function(event) {
+      modal.open()
+    })
+
+    closeBtn.addEventListener('click', function(event) {
+      modal.close()
+    })
+
+
+
+
+
+
+   </script>
+  </body>
+</html>
+
