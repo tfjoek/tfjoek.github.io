@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+
+    <h1 id="catFact">  </h1>
+
+
+   <script>
+fetch('https://catfact.ninja/fact')
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById('catFact').innerHTML = data.fact;
+  })
+
+  const catImages = [
+  'https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492_1280.jpg',
+  'https://www.humanesociety.org/sites/default/files/2022-08/hl-yp-cats-579652.jpg',
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm8ErlMlPdnS5zbhJ2KL339H-cCsjrxjMl8A&usqp=CAU',
+  'https://www.daysoftheyear.com/cdn-cgi/image/dpr=1%2Cf=auto%2Cfit=cover%2Cheight=675%2Cq=85%2Cwidth=1200/wp-content/uploads/black-cat-day-1-scaled.jpg',
+  'https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png',
+  'https://cdn.shopify.com/s/files/1/0086/0795/7054/articles/Cat_s_Mind_x630.jpg?v=1624444348',
+  'https://www.daysoftheyear.com/wp-content/uploads/happy-cat-month-1.jpg',
+  'https://hips.hearstapps.com/hmg-prod/images/large-cat-breed-1553197454.jpg?crop=1.00xw:0.505xh;0,0.0817xh&resize=1200:*',
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQasY85zdkdfFI-8Dc1GtfB6o6xnfwJBoQXQ8qMcCcLs63WPS-d3xMFoJQ7PrmcS1P61l4&usqp=CAU',
+  'https://cdn.pixabay.com/photo/2015/11/16/14/43/cat-1045782__340.jpg',
+  'https://cdn.pixabay.com/photo/2014/04/13/20/49/cat-323262__340.jpg',
+  'https://cdn.pixabay.com/photo/2015/03/27/13/16/maine-coon-694730__340.jpg',
+  'https://cdn.pixabay.com/photo/2016/07/10/21/47/cat-1508613__340.jpg',
+  'https://cdn.pixabay.com/photo/2017/11/09/21/41/cat-2934720__340.jpg'
+];
+
+function getRandomImage() {
+  const randomIndex = Math.floor(Math.random() * catImages.length);
+  return catImages[randomIndex];
+}
+
+const img = document.createElement('img');
+img.src = getRandomImage();
+document.body.appendChild(img);
+
+   </script>
+  </body>
+</html>
+
