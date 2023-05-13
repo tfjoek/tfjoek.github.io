@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="lorem"></p>
+
+<script>
+var lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.";
+
+var words = lorem.split(" ");
+var selectedWords = words.slice(0, 5);
+var modifiedText = selectedWords.join(" ");
+
+document.getElementById("lorem").innerHTML = modifiedText;
+</script>
+
+</body>
+</html>
