@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles.css" />
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+        body {
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+
+        .letter {
+            font-size: 90px;
+            font-family: 'Noto Sans JP', sans-serif;
+            display: inline-block;
+            color: #999;
+            transition: all 250ms ease-in-out;
+        }
+
+        .letter.active {
+            transform: scale(1.5);
+            color: pink;
+        }
+    </style>
+
+    </style>
+
+  </head>
+  <body>
+    <h1>😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁</h1>
+    <script>
+const h1 = document.querySelector("h1")
+        const letters = h1.innerText.split('')
+        let html = ""
+
+        letters.forEach(letter => {
+            let classes = ''
+            if(letter !== ' ') {
+                classes = 'letter js-letter'
+            }
+            html = html + `<span class='${classes}'>${letter}</span>`
+        })
+
+        h1.innerHTML = html
+        const jsLetters = document.querySelectorAll(".js-letter")
+        jsLetters.forEach(node => {
+            node.addEventListener("mouseover", function(event) {
+                this.classList.add("active")
+                console.log(this.innerText)
+            })
+            node.addEventListener("mouseout", function(event) {
+                this.classList.remove("active")
+            })
+        })
+    
+    </script>
+  </body>
+</html>
