@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Template Literals Example</title>
+  </head>
+  <body>
+    <h1>anna kolme asiaa</h1>
+    <form>
+      <label for="value1">Value 1:</label>
+      <input type="text" id="value1" name="value1"><br><br>
+      <label for="value2">Value 2:</label>
+      <input type="text" id="value2" name="value2"><br><br>
+      <label for="value3">Value 3:</label>
+      <input type="text" id="value3" name="value3"><br><br>
+      <input type="button" value="Submit" onclick="printValues()">
+    </form>
+    <div id="output"></div>
+    <script>
+      function printValues() {
+        const value1 = document.getElementById("value1").value;
+        const value2 = document.getElementById("value2").value;
+        const value3 = document.getElementById("value3").value;
+        const output = document.getElementById("output");
+        output.innerHTML = `kirjoitit: ${value1}, ${value2}, ${value3}`;
+      }
+    </script>
+  </body>
+</html>
