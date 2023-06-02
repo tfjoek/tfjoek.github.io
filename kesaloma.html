@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  
+
+h1 {
+        font-size: 28px;
+      }
+
+      @media only screen and (max-width: 500px) {
+        h1 {
+          animation: spin 0.2s linear infinite;
+          background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .image {
+    width: 30%;
+    height: auto;
+  }
+
+  @media only screen and (min-width: 500px) {
+    .image {
+      display: none;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <img class="image" src="https://media.tenor.com/ABeVmJ3y2WQAAAAd/cat-dancing-meme-dancing.gif" alt="placeholder image">
+  <img class="image" src="https://media.tenor.com/arqlNu8gyJYAAAAC/cat-cat-jumping.gif" alt="placeholder image">
+  <h1>moro miten mene? </h1>
+</div>
+    </div>
+  </div>
+</body>
+</html>
