@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.cdnfonts.com/css/modern-sans" rel="stylesheet">
+    <link rel="stylesheet" href="stylesS.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: 'Modern Sans', sans-serif;
+        text-align: center;
+    }
+    h1 {
+        padding-top: 50px;
+    }
+    #journal-entries {
+        font-size: 1.2rem;
+        line-height: 1.5;
+        margin: 2rem auto;
+        max-width: 800px;
+    }
+    h2 {
+        text-align: left;
+    }
+    p {
+        text-align: left;
+    }
+    button {
+        background-color: #4caf50;
+        border: none;
+        color: white;
+        padding: 1rem;
+        margin: 1rem;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #3e8e41;
+    }
+    .button {
+  background-color: #4caf50;
+  background-image: linear-gradient(to bottom, #4caf50, #2e8b57);
+  border: none;
+  color: white;
+  padding: 1rem;
+  margin: 1rem;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background-color: #3e8e41;
+}
+</style>
+<body>
+    <h1>Työpäiväkirja</h1>
+
+    <div id="journal-entries"></div>
+    <button id="prev-day" class="button">Previous Day</button>
+    <button id="next-day" class="button">Next Day</button>
+
+    <script>
+        const journalEntries = [
+            { date: "17.8.2023", content: "Sain kaikki käyttäjätunnukset ja muut asiat haltuun. Aloitin myös suunnittelemaan intranetin designia." },
+            { date: "18.8.2023", content: "Aloitin intranetin tekemisen." },
+            { date: "21.8.2023", content: "Intranetin tekemistä." }
+        ];
+        let currentDay = 0;
+
+        const journalContainer = document.getElementById("journal-entries");
+        journalContainer.innerHTML = `
+            <h2>${journalEntries[currentDay].date}</h2>
+            <p>${journalEntries[currentDay].content}</p>
+        `;
+
+        const prevButton = document.getElementById("prev-day");
+        prevButton.addEventListener("click", () => {
+            if (currentDay > 0) {
+                currentDay--;
+                journalContainer.innerHTML = `
+                    <h2>${journalEntries[currentDay].date}</h2>
+                    <p>${journalEntries[currentDay].content}</p>
+                `;
+            }
+        });
+
+        const nextButton = document.getElementById("next-day");
+        nextButton.addEventListener("click", () => {
+            if (currentDay < journalEntries.length - 1) {
+                currentDay++;
+                journalContainer.innerHTML = `
+                    <h2>${journalEntries[currentDay].date}</h2>
+                    <p>${journalEntries[currentDay].content}</p>
+                `;
+            }
+        });
+    </script>
+</body>
+</html>
