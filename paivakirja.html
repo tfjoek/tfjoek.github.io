@@ -6,64 +6,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        /* CSS styles */
+    </style>
 </head>
-<style>
-    body {
-        font-family: 'Modern Sans', sans-serif;
-        text-align: center;
-    }
-    h1 {
-        padding-top: 50px;
-    }
-    #journal-entries {
-        font-size: 1.2rem;
-        line-height: 1.5;
-        margin: 2rem auto;
-        max-width: 800px;
-    }
-    h2 {
-        text-align: left;
-    }
-    p {
-        text-align: left;
-    }
-    button {
-        background-color: #4caf50;
-        border: none;
-        color: white;
-        padding: 1rem;
-        margin: 1rem;
-        cursor: pointer;
-    }
-    button:hover {
-        background-color: #3e8e41;
-    }
-    .button {
-  background-color: #4caf50;
-  background-image: linear-gradient(to bottom, #4caf50, #2e8b57);
-  border: none;
-  color: white;
-  padding: 1rem;
-  margin: 1rem;
-  cursor: pointer;
-  border-radius: 20px;
-  transition: all 0.3s ease;
-}
-
-.button:hover {
-  background-color: #3e8e41;
-}
-</style>
 <body>
     <h1>Työpäiväkirja</h1>
-        <h1>kirjotan myohemmin tarkemmat tiedot paivista</h1>1
-
+    <h1>kirjotan myohemmin tarkemmat tiedot paivista</h1>
     <div id="journal-entries"></div>
     <button id="prev-day" class="button">entinen pv</button>
     <button id="next-day" class="button">seuraava pvy</button>
 
     <script>
-const journalEntries = [
+        // JavaScript code
+        const journalEntries = [
   { date: "17.8.2023", content: "Sain kaikki käyttäjätunnukset ja muut asiat haltuun. Aloitin myös suunnittelemaan intranetin designia." },
   { date: "18.8.2023", content: "Aloitin intranetin tekemisen." },
   { date: "21.8.2023", content: "Intranetin ekaa mallia tekemistä." },
@@ -99,8 +55,10 @@ const journalEntries = [
   { date: "2.10.2023", content: "Intranetin tekemistä" },
   { date: "3.10.2023", content: "Intranetin tekemistä" },
   { date: "4.10.2023", content: "Intranetin tekemistä" },
-      { date: "5.10.2023", content: "Intranetin tekemistä" },
-      { date: "6.10.2023", content: "Intranetin tekemistä" }
+{ date: "5.10.2023", content: "Intranetin tekemistä" },
+{ date: "6.10.2023", content: "Intranetin tekemistä" }
+        ];
+
         let currentDay = 0;
 
         const journalContainer = document.getElementById("journal-entries");
