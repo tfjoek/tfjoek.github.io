@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-
         body {
             font-family: 'Modern Sans', sans-serif;
             text-align: center;
@@ -47,12 +46,50 @@
             background-color: #004080;
             transform: translateY(1px);
         }
+
+        .search {
+            margin-top: 2rem;
+        }
+
+        .search input[type="text"] {
+            padding: 0.5rem;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .search input[type="submit"] {
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .search input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .search input[type="submit"]:active {
+            background-color: #004080;
+            transform: translateY(1px);
+        }
+
     
     </style>
 </head>
 <body>
     <h1>Työpäiväkirja</h1>
     <h1>kirjotan myohemmin tarkemmat tiedot paivista</h1>
+        <div id="search-container" class="search">
+        <input type="text" id="search-date" placeholder="Search date (dd.mm.yyyy)">
+        <input type="submit" id="search-button" value="Search">
+    </div>
+    <div id="journal-entries"></div>
+    <button id="prev-day" class="button">Edellinen päivä</button>
+    <button id="next-day" class="button">Seuraava päivä</button>
     <div id="journal-entries"></div>
     <button id="prev-day" class="button">entinen pv</button>
     <button id="next-day" class="button">seuraava pvy</button>
@@ -99,35 +136,72 @@
 { date: "6.10.2023", content: "Intranetin tekemistä" }
         ];
 
-        let currentDay = 0;
+     let currentDay = 0;
 
         const journalContainer = document.getElementById("journal-entries");
-        journalContainer.innerHTML = `
-            <h2>${journalEntries[currentDay].date}</h2>
-            <p>${journalEntries[currentDay].content}</p>
-        `;
-
+        const searchDateInput = document.getElementById("search-date");
+        const searchButton = document.getElementById("search-button");
         const prevButton = document.getElementById("prev-day");
-        prevButton.addEventListener("click", () => {
+        const nextButton = document.getElementById("next-day");
+
+        displayJournalEntry();
+
+        function displayJournalEntry() {
+            journalContainer.innerHTML = `
+                <h2>${journalEntries[currentDay].date}</h2>
+                <p>${journalEntries[currentDay].content}</p>
+            `;
+        }
+
+        function searchJournalEntry() {
+            const searchDate = searchDateInput.value.trim();
+
+            for (let i = 0; i < journalEntries.length; i++) {
+                if (journalEntries[i].date === searchDate) {
+                    currentDay = i;
+                    updateJournalEntry();
+                    break;
+                }
+            }
+        }
+
+        function animateJournalEntry() {
+            journalContainer.classList.add("animation");
+            setTimeout(() => {
+                journalContainer.classList.remove("animation");
+            }, 500);
+        }
+
+        function updateJournalEntry() {
+            displayJournalEntry();
+            animateJournalEntry();
+        }
+
+        function prevJournalEntry() {
             if (currentDay > 0) {
                 currentDay--;
-                journalContainer.innerHTML = `
-                    <h2>${journalEntries[currentDay].date}</h2>
-                    <p>${journalEntries[currentDay].content}</p>
-                `;
+                updateJournalEntry();
+            }
+        }
+
+        function nextJournalEntry() {
+            if (currentDay < journalEntries.length - 1) {
+                currentDay++;
+                updateJournalEntry();
+            }
+        }
+
+        searchButton.addEventListener("click", searchJournalEntry);
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Enter") {
+                searchJournalEntry();
             }
         });
 
-        const nextButton = document.getElementById("next-day");
-        nextButton.addEventListener("click", () => {
-            if (currentDay < journalEntries.length - 1) {
-                currentDay++;
-                journalContainer.innerHTML = `
-                    <h2>${journalEntries[currentDay].date}</h2>
-                    <p>${journalEntries[currentDay].content}</p>
-                `;
-            }
-        });
+        prevButton.addEventListener("click", prevJournalEntry);
+
+        nextButton.addEventListener("click", nextJournalEntry);
     </script>
 </body>
 </html>
