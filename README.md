@@ -1,1 +1,1 @@
-HELLO THIS IS FIRST YEAR SCHOOL STUFF NOTHING HERE JUST OLD STUFF :)
+first year old school stuff --
